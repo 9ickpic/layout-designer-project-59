@@ -1,0 +1,38 @@
+{
+  "name": "layout-designer-project-59",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/9ickpic/layout-designer-project-59/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/9ickpic/layout-designer-project-59/actions)",
+  "homepage": "https://github.com/9ickpic/layout-designer-project-59#readme",
+  "bugs": {
+    "url": "https://github.com/9ickpic/layout-designer-project-59/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/9ickpic/layout-designer-project-59.git"
+  },
+  "license": "ISC",
+  "author": "Yaroslav Selyutin",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "lint:css": "npx stylelint ./app/scss/**/*.scss",
+    "lint:html": "npx htmlhint ./app/**/*.html"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.7",
+    "gulp": "^5.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-svg-sprite": "^2.0.3",
+    "htmlhint": "^1.6.3",
+    "pug": "^3.0.3",
+    "sass": "^1.89.2",
+    "stylelint": "^16.23.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^39.0.0",
+    "stylelint-order": "^7.0.0",
+    "stylelint-scss": "^6.12.1",
+    "surge": "^0.24.6"
+  }
+}
