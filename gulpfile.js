@@ -2,6 +2,8 @@ import gulp from "gulp";
 import sass from "gulp-sass";
 import svgSprite from "gulp-svg-sprite";
 import dartSass from "sass";
+import pug from "gulp-pug"; // Добавлен импорт
+import concat from "gulp-concat"; // Добавлен импорт
 
 const sassCompiler = sass(dartSass);
 
@@ -11,11 +13,11 @@ const paths = {
     dest: "./build/css",
   },
   pug: {
-    src: "./app/pug/**/*.scss",
+    src: "./app/pug/**/*.pug", // Исправлено расширение с .scss на .pug
     dest: "./build",
   },
   svg: {
-    src: "./app/icons/*.svg",
+    src: "./app/images/icons/*.svg",
     dest: "./build/images",
   },
   js: {
@@ -27,7 +29,13 @@ const paths = {
 const compileSass = () =>
   gulp
     .src(paths.sass.src)
-    .pipe(sassCompiler().on("err", sassCompiler.logError))
+    .pipe(
+      sassCompiler({
+        includePaths: ["node_modules"],
+        quietDeps: true, // Подавляет предупреждения от зависимостей
+        verbose: false, // Отключает подробный вывод
+      }).on("error", sassCompiler.logError)
+    )
     .pipe(gulp.dest(paths.sass.dest));
 
 const compilePug = () =>

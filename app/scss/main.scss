@@ -1,1 +1,21 @@
-@import "bootstrap/scss/bootstrap";
+@use "_variables";
+@use "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+html,
+body {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.container-xxl {
+  max-width: 1540px;
+}
+
+.padding-top {
+  padding-top: 3rem;
+}
+
+.padding-horizontal {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
